@@ -23,11 +23,12 @@ RUN \
     export LANGUAGE="$LOCALE"; \
     \
     apt-get $APT_OPTION install \
-        apt-transport-https bash-completion curl less \
-        software-properties-common unzip vim wget; \
+        apt-transport-https curl less \
+        software-properties-common vim wget; \
     \
     add-apt-repository --yes --update ppa:ondrej/apache2; \
     apt-get $APT_OPTION install apache2 apache2-utils; \
+    mv /etc/apache2 /etc/apache2.bak; \
     \
     apt-get $APT_OPTION autoclean; \
     rm -rf "/var/lib/apt/lists/*"
