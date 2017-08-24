@@ -31,7 +31,7 @@ RUN \
     mv /etc/apache2 /etc/apache2.bak; \
     \
     apt-get $APT_OPTION autoclean; \
-    rm -rf "/var/lib/apt/lists/*"
+    rm -rf /var/lib/apt/lists/*
 
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
